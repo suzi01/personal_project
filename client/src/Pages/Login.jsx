@@ -7,23 +7,17 @@ import { set } from "mongoose";
 import Home from "./Home";
 import { AuthContext } from "../Context/AuthContext";
 import { loginCall } from "../apiCalls";
-// import { Location } from "react-router-dom";
+
 
 const Login = (props) => {
   const[errorMessage, setErrorMessage] = useState()
-  // const [authenticated, setAuthenticated] = useState()
-  // const [user, setUser] = useState()
   const [details, setDetails] = useState({
     email: "",
     password: ""
   });
   const {user, isFetching, dispatch, err} = useContext(AuthContext)
-  // console.log(localStorage.getItem('user'))
   const navigate = useNavigate()
 
-  // if(user){
-    // return <div>{user.name.userName} is logged in</div>
-  // }
 
  
 
@@ -45,15 +39,6 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // if(user === null){
-    //   setErrorMessage(true)
-    //   setDetails({
-    //         email: "",
-    //         password: ""
-    //       });
-    // } else{
-    // loginCall({email: details.email, password:details.password},dispatch)
-
     try{
       loginCall({email: details.email, password:details.password},dispatch)
       if(user === null){
@@ -65,22 +50,7 @@ const Login = (props) => {
     }
 
 
-      // if(response === 'Details not found, please try again' || response === 'password does not match' ){
-      //   setError(true)
-      //   setDetails({
-      //     email: "",
-      //     password: ""
-      //   });
-      //   dispatch({type:"LOGIN_FAILURE", payload:error})
-      // } else {
-        
      
-        // localStorage.setItem('id',response._id)
-        // localStorage.setItem('user', response.name.userName)
-        // localStorage.setItem('image', response.profile.thumbnail)
-        // setUser(true)
-        // window.location.reload()
-      // }
     } catch(error){
       setErrorMessage(true)
       console.log(err)

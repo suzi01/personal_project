@@ -82,7 +82,6 @@ const InnerContainer = styled.div`
   padding: 0px 20px;
   margin-top:20px;
   h3 {
-    ${'' /* margin-top:10px; */}
     color: white;
     letter-spacing: 1.2px;
     font-size: 30px;
@@ -145,15 +144,11 @@ const Carousel = styled(Slider)`
   font-family: "Font Awesome 5 Free";
 }
 .slick-prev::before {
-  /* fa-arrow-circle-left */
-  /* content: "\f0a8"; */
   content: "<";
   font-weight: 900;
   width:10px;
 }
 .slick-next::before {
-  /* fa-arrow-circle-right */
-  /* content: "\f0a9"; */
   content: ">";
   font-weight:bolder;
 }

@@ -1,32 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom"
 
 
 
 function Starter() {
-  const changeImg = () => {
-    const imgArr = ['https://images.hdqwalls.com/download/black-widow-in-captain-america-winter-solider-ha-3840x2160.jpg',
-      "https://images.hdqwalls.com/download/avengers-endgame-12k-6y-3840x2160.jpg",
-      "https://images.hdqwalls.com/download/2022-top-gun-maverick-zz-3840x2160.jpg",
-      "https://images.hdqwalls.com/download/daredevil-2022-r8-3840x2160.jpg",
-      // "https://images.hdqwalls.com/download/stranger-things-2020-q9-3840x2160.jpg",
-      "/images/stranger-things-2020-q9-3840x2160.jpg"]
-    const bg = imgArr[Math.floor(Math.random() * imgArr.length)]
-    console.log(bg)
-    return bg
-  }
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const slides = [
+    { imageSrc: '/images/top-gun-maverick.jpg', alt: 'top-gun-maverick' },
+    { imageSrc: '/images/daredevil.jpg', alt: 'daredevil' },
+    { imageSrc: '/images/avengers-endgame.jpeg', alt:'end-game'},
+    { imageSrc: '/images/stranger-things.jpg', alt:'stranger-things'}
+ 
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 7000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [slides.length]);
 
 
   return (
     <Container>
-    {/* <BgImage img="/images/stranger-things-2020-q9-3840x2160.jpg"/> */}
-      <BgImage img={changeImg()} />
-      {/* {setInterval(changeImg, 3000)} */}
-      {/* <img src='https://images.hdqwalls.com/download/black-widow-in-captain-america-winter-solider-ha-3840x2160.jpg'/> */}
-      {/* <img src='https://w0.peakpx.com/wallpaper/354/14/HD-wallpaper-captain-america-captain-america-the-winter-soldier-black-widow-scarlett-johansson.jpg' /> */}
-      {/* <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY4oWm8YIE-hKiz4Q6Ov9QiCVp6Pq3F8Zurw&usqp=CAU' /> 
-    <img src = 'https://play-lh.googleusercontent.com/5TfdjYGdHkrmOa1MirO5ulceugZRwFR0w2pVx3Mk_uY-p8-c7AVmd--frG1O7VqouE8'/> */}
+    <BgImage>
+    {slides.map((slide, index) => (
+        <KenBurnSlides
+          key={index}
+          className={index === currentIndex && 'active'}
+        >
+          <img src={slide.imageSrc} alt={slide.alt} />
+        </KenBurnSlides>
+      ))}
+      
+    </BgImage>
       <Content>
         <Description>
           Welcome to Entertainment Central
@@ -36,10 +47,6 @@ function Starter() {
         <RegisterLink to="/login">
           <SignUp>START HERE!</SignUp>
         </RegisterLink>
-
-        {/* <Companies>
-            <img src="/images/company_logos.jpeg" alt='companies'/>
-        </Companies> */}
       </Content>
       <Bottom>
         <Companies>
@@ -71,33 +78,59 @@ const Container = styled.section`
   }
 `;
 
-//   
-// const fadeBackground  = keyframes`
-//   from { background-image: linear-gradient(
-//       -180deg,
-//       rgba(255, 255, 255, 0.5) 0%,
-//       rgba(0, 0, 0, 0.5) 100%
-//     ), url("https://images.hdqwalls.com/download/black-widow-in-captain-america-winter-solider-ha-3840x2160.jpg") }
-//   to { background-image: linear-gradient(
-//       -180deg,
-//       rgba(255, 255, 255, 0.5) 0%,
-//       rgba(0, 0, 0, 0.5) 100%
-//     ), url("https://images.hdqwalls.com/download/avengers-endgame-12k-6y-3840x2160.jpg") }
-// `
+
+const ken_burns = keyframes`
+   0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  33% {
+    transform: scale(1.1) translateX(5%);
+    opacity: 1;
+  }
+  67% {
+    transform: scale(1.1) translateX(-5%);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const KenBurnSlides = styled.div `
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+
+  &.active{
+    opacity:1;
+  }
+`
 
 const BgImage = styled.div`
-  background-image: linear-gradient(
-      -180deg,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(0, 0, 0, 0.5) 100%
-    ),
-    ${props => `url(${props.img})`};
-    ${'' /* url("https://images.hdqwalls.com/download/black-widow-in-captain-america-winter-solider-ha-3840x2160.jpg"); */}
   width: 100%;
   height: 100vh;
   background-size: cover;
   position: absolute;
   margin-bottom: 60px;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: ${ken_burns} 10s ease-in-out infinite alternate;
+  }
+
   @media (max-width: 768px) {
     margin-bottom:0;
     height:90%
@@ -157,8 +190,6 @@ const Companies = styled.div`
       }
 `
 
-
-
 const Bottom = styled.footer`
     width:100vw;
     height: 130px;
@@ -170,8 +201,6 @@ const Bottom = styled.footer`
         height:40px;
         bottom: 2%;
       }
-    
-
-    
 `
+
 export default Starter;
