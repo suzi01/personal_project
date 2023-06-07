@@ -74,7 +74,7 @@ const Login = (props) => {
       //   dispatch({type:"LOGIN_FAILURE", payload:error})
       // } else {
         
-
+     
         // localStorage.setItem('id',response._id)
         // localStorage.setItem('user', response.name.userName)
         // localStorage.setItem('image', response.profile.thumbnail)
@@ -84,9 +84,7 @@ const Login = (props) => {
     } catch(error){
       setErrorMessage(true)
       console.log(err)
-    //   dispatch({type:"LOGIN_FAILURE", payload:error})
     }
-  // }
   }
 
   console.log(user)
