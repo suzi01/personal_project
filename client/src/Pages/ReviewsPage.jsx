@@ -24,8 +24,6 @@ const ReviewsPage = () => {
       <ImgTile media={tile.media_type} onClick={(e) => handleResults(tile)}>
         <img src={`https://image.tmdb.org/t/p/w500${tile.poster_path}`} alt={tile.id} ></img>
         <h1>{tile.title}</h1>
-        {/* <p>{tile.media_type}</p>
-        <p>{tile.id}</p> */}
       </ImgTile>
 
     )
@@ -38,16 +36,13 @@ const ReviewsPage = () => {
     console.log("The reviews", reviews.data.results)
     setReviewFound(true)
     setFilmSelected(reviews.data.results)
-    // console.log(e.target.media)
   }
 
   const handleChange = (e) => {
-    // console.log(e.target.value)
     setSearchTerm(e.target.value)
   }
 
  const handleSubmit = async() => {
-    // console.log(searchTerm)
     const res = await searchForItem(searchTerm)
     console.log(res.data.results)
     setResults(res.data.results)
@@ -104,7 +99,6 @@ const Container = styled.div`
 const Content = styled.div`
   padding:10px;
   position:relative;
-  ${'' /* background-color:red; */}
   top:100px;
   margin-bottom:140px
  
@@ -134,15 +128,12 @@ const SearchBar = styled.div`
 
 const ReviewsSection = styled.div`
   width:100%;
-  ${'' /* background-color:pink; */}
   display:flex;
   flex-direction:row;
   margin-top:35px;
 `
 
 const ReviewsNav = styled.div`
-  ${'' /* flex:1; */}
-  ${'' /* background-color:red; */}
   display:flex;
   flex-direction: column;
   gap:10px;
@@ -176,7 +167,6 @@ const ImgTile = styled.div`
   img{
     width:250px;
     height:350px;
-    ${'' /* height:100px; */}
   }
   
 

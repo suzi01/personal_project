@@ -20,15 +20,9 @@ const Register = () => {
                 [name]: value
             };
         });
-        // console.log(details);
     };
 
     const goToLoginPage = () => navigate("/login");
-
-    // const validatePassword = (password1, password2) => {
-    //   if (password)
-
-    // }
 
     const {
         register,
@@ -38,7 +32,6 @@ const Register = () => {
     } = useForm();
 
     const onSubmit = async (data) => {
-        // e.preventDefault;
         console.log(data);
         let profile_pic = data.image[0].name
         console.log(data.image[0].name)
@@ -59,27 +52,11 @@ const Register = () => {
         if(response.error === false){
             setAccount(true);
         }
-
-        // if(response === 'Details not found, please try again' || response === 'password does not match' ){
-        //     setError(true)
-        //     setDetails({
-        //     email: "",
-        //     password: ""
-        //     });
-        // } else {
-        //     // setUser(response)
-        //     // let arr = [response]
-        //     localStorage.setItem('user',response._id)
-        //     // navigate("/home");
-        // }
         } catch(error){
-        // setError(true)
+
         }
-
-
-        
     };
-    // console.log(details)
+
 
     return (
         <Container>
@@ -98,7 +75,6 @@ const Register = () => {
                             placeholder="First name..."
                             name="first"
                             onChange={handleChange}
-                            // value={details.first}
                             {...register("first", {
                                 required: true
                             })}
@@ -112,7 +88,6 @@ const Register = () => {
                             placeholder="Last name..."
                             name="last"
                             onChange={handleChange}
-                            // value={details.last}
                             {...register("last", {
                                 required: true
                             })}
@@ -126,7 +101,6 @@ const Register = () => {
                             placeholder="User name..."
                             name="userName"
                             onChange={handleChange}
-                            // value={details.userName}
                             {...register("userName", {
                                 required: true
                             })}
@@ -140,7 +114,6 @@ const Register = () => {
                             type="text"
                             placeholder="Type email here..."
                             name="email"
-                            // value={details.email}
                             onChange={handleChange}
                             {...register("email", {
                                 required: true,
@@ -160,7 +133,6 @@ const Register = () => {
                             placeholder="Type password here..."
                             name="password"
                             onChange={handleChange}
-                            // value={details.password}
                             {...register("password", {
                                 required: true,
                                 minLength: 6
@@ -178,7 +150,6 @@ const Register = () => {
                             placeholder="Confirm password..."
                             name="confirm_password"
                             onChange={handleChange}
-                            // value={password2}
                             {...register("confirm_password", {
                                 required: true,
                                 validate: (val, string) => {
@@ -194,15 +165,11 @@ const Register = () => {
                             )}
                     </FormDetails>
                     <FormDetails>
-                        {/* <label>
-                            {" "}
-                            Upload  */}
                             <UploadImg
                                 type="file"
                                 accept="image/*"
                                 name="image"
                                 onChange={handleChange}
-                                // value={details.image}
                                 {...register("image", {
                                     required: true,
                                     minLength: 6
@@ -211,7 +178,6 @@ const Register = () => {
                             {errors.image && errors.image.type === "required" && (
                                 <ErrMessage>Image is required.</ErrMessage>
                             )}
-                         {/* </label> */}
                     </FormDetails>
                     <button>Register</button>
                     <BottomLink>
@@ -229,9 +195,6 @@ const Container = styled.div`
     position: absolute;
     width:100%;
     height:100%;
-    ${'' /* background: url("https://compote.slate.com/images/721112a8-1fa9-4a48-8eeb-0c4f29e0d8f6.jpeg?crop=1554%2C1036%2Cx2%2Cy0"); */}
-    ${'' /* color:white;
-    filter:brightness(50%) */}
     z-index:-1;
     display:flex;
     flex-direction:column;
@@ -291,7 +254,6 @@ const Twitter = styled(BsTwitter)`
 `
 const Facebook = styled(BsFacebook)`
     width:80px;
-    ${'' /* height:0px; */}
     &:hover{
         color:#2471A3;
     }
@@ -321,15 +283,7 @@ const FormDetails = styled.div`
     padding:10px 0;
 
     label{
-        ${'' /* background-color: indigo;
-        color: white;
-        padding: 8px;
-        border-radius: 8px; */}
         cursor: pointer;
-        ${'' /* margin-top:; */}
-        ${'' /* font-size:20px;
-        text-align:center;
-        height:40px; */}
     }
 `
 
@@ -358,15 +312,12 @@ const ErrMessage = styled.p`
   color: #1c70d5;
   font-weight:bold;
   margin-left:5px;
-  ${'' /* text-align:center; */}
 `;
 
 const UploadImg = styled.input.attrs({
     type: 'file'
 })`
-    ${'' /* background-color:pink; */}
     height:40px;
-    ${'' /* display:none; */}
 `
 const BottomLink = styled.p`
   font-size: 15px;

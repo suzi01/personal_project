@@ -13,7 +13,6 @@ function Credits(props) {
     useEffect(() => {
         async function getAllCredits() {
             const response = await getMediaCredits(media_type,media_id );
-            // console.log(response)
             setCredits(response);
         }
 
@@ -40,11 +39,7 @@ function Credits(props) {
         </CastCard>)
 
     if (!credits) return <div>Loading...</div>;
-
-    // console.log(credits.poster_path)
     return (
-
-        // <p>hello</p>
         <CastCards>
                 {credits.length>0 && credits.map((credit) => renderCard(credit))}
         </CastCards>
@@ -63,11 +58,9 @@ const CastCards = styled.div`
 `;
 
 const CastCard = styled.div`
-  /* width: px; */
   text-align: center; 
   img {
     width: 70%;
-    ${'' /* max-width:120px; */}
     border-radius:8px;
   }
   p {
@@ -80,10 +73,8 @@ const CastCard = styled.div`
       width:50%;
     }
     p {
-      padding-left:10%;
-    /* text-align: center; */
-    /* width:50%; */
-  }
+      padding-left:10%; 
+    }
   }
 `;
 

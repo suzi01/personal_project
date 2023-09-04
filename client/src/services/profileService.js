@@ -6,7 +6,7 @@ const apiConfig = {
   baseUrl: 'https://api.themoviedb.org/3/',
   width500path: (imgPath) => `https://image.tmdb.org/t/p/w500`,
   img_path: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
-  apiKey: '9bf60a72b3e330ea682646c71c8f0110'
+  apiKey: process.env.API_KEY
 }
 
 const getAllProfiles = async () => {
@@ -30,26 +30,25 @@ export const createUser = async (details) => {
 }
 
 export const getVideo = async () => {
-  // https://api.themoviedb.org/3/movie/527774/videos?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US
+  // https://api.themoviedb.org/3/movie/527774/videos?
   const response = await axios.get(`${apiConfig.baseUrl}{media_type}/{media_id}videos?api_key=${apiConfig.apiKey}&language=en-US`)
 }
 
 
 const getTrending = async () => {
-  // https://api.themoviedb.org/3/trending/all/day?api_key=9bf60a72b3e330ea682646c71c8f0110
+  // https://api.themoviedb.org/3/trending/all/day?
   const response = await axios.get(`${apiConfig.baseUrl}trending/all/day?api_key=${apiConfig.apiKey}`)
   let arr = response.data.results
   let movielist = []
 
   arr.forEach(item =>
     movielist.push({ poster: item.poster_path, title: (item.title || item.name), id: item.id, media_type: item.media_type }))
-  // console.log(movielist)
   return movielist
 
 }
 
 const getPopularMovie = async () => {
-  // https://api.themoviedb.org/3/movie/popular?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-Uk&page=1
+  // https://api.themoviedb.org/3/movie/popular?api_key=&language=en-Uk&page=1
   const response = await axios.get(`${apiConfig.baseUrl}movie/popular?api_key=${apiConfig.apiKey}&language=en-Uk`)
   let arr = response.data.results
   let popMovieList = []
@@ -61,7 +60,7 @@ const getPopularMovie = async () => {
 }
 
 export const getPopularTV = async () => {
-  // https://api.themoviedb.org/3/movie/popular?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-Uk&page=1
+  // https://api.themoviedb.org/3/movie/popular?api_key=&language=en-Uk&page=1
   const response = await axios.get(`${apiConfig.baseUrl}tv/popular?api_key=${apiConfig.apiKey}&language=en-Uk`)
   let arr = response.data.results
   let popTvList = []
@@ -73,7 +72,7 @@ export const getPopularTV = async () => {
 }
 
 const getUpcoming = async () => {
-  //https://api.themoviedb.org/3/movie/upcoming?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US&page=1
+  //https://api.themoviedb.org/3/movie/upcoming?&page=1
   const response = await axios.get(`${apiConfig.baseUrl}movie/upcoming?api_key=${apiConfig.apiKey}`)
   let arr = response.data.results
   let upcomingList = []
@@ -84,7 +83,7 @@ const getUpcoming = async () => {
 }
 
 export const getTopRated = async () => {
-  // https://api.themoviedb.org/3/movie/top_rated?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US
+  // https://api.themoviedb.org/3/movie/top_rated?
   const topMovie = await axios.get(`${apiConfig.baseUrl}movie/top_rated?api_key=${apiConfig.apiKey}&language=en-US`)
   const topTv = await axios.get(`${apiConfig.baseUrl}tv/top_rated?api_key=${apiConfig.apiKey}&language=en-US`)
   let movieArr = topMovie.data.results
@@ -100,7 +99,7 @@ export const getTopRated = async () => {
 }
 
 export const searchForItem = async(media_name) => {
-  // https://api.themoviedb.org/3/search/multi?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US&query=we%20have%20a%20ghost
+  // https://api.themoviedb.org/3/search/multi?&query=we%20have%20a%20ghost
   const response = await axios.get(`${apiConfig.baseUrl}search/multi?api_key=${apiConfig.apiKey}&language=en-US&query=${media_name}`)
   return response
  
@@ -108,20 +107,20 @@ export const searchForItem = async(media_name) => {
 
 
 export const getReviewsFromAPI = async(media_id, media_type) => {
-  // https://api.themoviedb.org/3/movie/527774/reviews?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US&page=1
+  // https://api.themoviedb.org/3/movie/527774/reviews?&page=1
   const response = await axios.get(`${apiConfig.baseUrl}${media_type}/${media_id}/reviews?api_key=${apiConfig.apiKey}&language=en-US`)
   return response
 }
 
 const getMediaDetails = async (media_type, media_id) => {
-  // movie details - https://api.themoviedb.org/3/movie/527774?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US
+  // movie details - https://api.themoviedb.org/3/movie/527774?
   const response = await axios.get(`${apiConfig.baseUrl}${media_type}/${media_id}?api_key=${apiConfig.apiKey}&language=en-US`)
   let arr = response.data
   return arr
 }
 
 const getMediaCredits = async (media_type, media_id) => {
-  // credits - https://api.themoviedb.org/3/movie/527774/credits?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US
+  // credits - https://api.themoviedb.org/3/movie/527774/credits?
   const response = await axios.get(`${apiConfig.baseUrl}${media_type}/${media_id}/credits?api_key=${apiConfig.apiKey}&language=en-US`)
   let arr = response.data.cast.slice(0, 5)
   return arr
@@ -129,7 +128,7 @@ const getMediaCredits = async (media_type, media_id) => {
 
 
 const getRecommendations = async (media_type, media_id) => {
-  // recommendations - https://api.themoviedb.org/3/movie/100088/similar?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US&page=1
+  // recommendations - https://api.themoviedb.org/3/movie/100088/similar?&page=1
   const response = await axios.get(`${apiConfig.baseUrl}${media_type}/${media_id}/similar?api_key=${apiConfig.apiKey}&language=en-US`)
   let arr = response.data.results
   let recList = []
@@ -142,7 +141,6 @@ const getRecommendations = async (media_type, media_id) => {
 
 export const getConversations = async (userID) => {
   const response = await axios.get(`/conversations/${userID}`);
-  // console.log(response)
   return response
 }
 
@@ -171,7 +169,7 @@ export const removeFromList = async(user_id, media_id, media_type) => {
 
 
 
-// https://api.themoviedb.org/3/852096/movie?api_key=9bf60a72b3e330ea682646c71c8f0110&language=en-US 
+// https://api.themoviedb.org/3/852096/movie? 
 
 // All of the endpoints in this file can be exported below
 export { getAllProfiles, getTrending, apiConfig, getPopularMovie, getUpcoming, getMediaDetails, getMediaCredits, getRecommendations, loginUser, getUser };

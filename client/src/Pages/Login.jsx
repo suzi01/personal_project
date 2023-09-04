@@ -156,7 +156,6 @@ const Icons = styled.div`
   height: 30%;
   width: 40%;
   justify-content: space-around;
-  ${"" /* background-color:pink; */}
   padding: 5px 0;
   @media (max-width: 768px) {
     width: 70%;
@@ -191,7 +190,6 @@ const FormDetails = styled.div`
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-    ${"" /* margin-top:; */}
     font-size:25px;
   }
 `;

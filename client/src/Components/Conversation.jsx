@@ -13,7 +13,6 @@ const Conversation = ({conversation, currentUser}) => {
       try{
         const res = await getUser(otherId)
         setUser(res)
-        // console.log(res.data)
       }catch(err){
         console.log(err)
       }
@@ -21,12 +20,10 @@ const Conversation = ({conversation, currentUser}) => {
     }
     getOtherUser()
   }, [currentUser, conversation])
-  // console.log(user.name.userName)
   if (!user) return <div>Loading...</div>;
   
   return (
         <Conversations>
-          {/* <h1>Your Conversations</h1> */}
           <ConverationDetails>
             <img src={user.profile.thumbnail} alt={user.name.userName}></img>
             <span>{user.name.userName}</span>
@@ -50,17 +47,13 @@ const Content = styled.div`
 `
 
 const Conversations = styled.div`
-  ${'' /* flex:1; */}
   color:white;
-  ${'' /* background-color:grey; */}
   padding:20px 10px 10px 10px;
  
 `
 
 const ConverationDetails = styled.div`
-  ${'' /* background-color:pink; */}
   margin-bottom: 8px;
-  ${'' /* border-bottom: 1px solid; */}
   padding:5px;
   img{
     width:80px;

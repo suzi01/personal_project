@@ -2,9 +2,6 @@ import React from 'react'
 import styled from "styled-components"
 
 
-
-
-
 const Vote = () => {
   return (
     <Container>Vote</Container>

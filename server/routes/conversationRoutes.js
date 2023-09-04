@@ -10,7 +10,6 @@ app.post("/conversations", async(req, res) => {
     })
 
     try{
-        // console.log(newConversation)
         const savedConversation = await newConversation.save()
         res.status(200).send(newConversation)
     } catch(err){

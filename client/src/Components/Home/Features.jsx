@@ -87,7 +87,6 @@ const Carousel = styled(Slider)`
 `
 
 const Container = styled.div`
-  ${'' /* top:20px; */}
   height: 90vh;
   position: relative;
   border:solid 10px #212F3C;

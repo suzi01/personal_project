@@ -15,31 +15,16 @@ import {getUser} from "./services/profileService";
 
 import {useContext} from "react"
 import { AuthContext } from "./Context/AuthContext"
-// import { use } from "passport";
-
 
 
 function App() {
   const {user} = useContext(AuthContext)
 
-  // const [user, setUser] = useState()
- 
-  // useEffect(() =>{
-  //   async function checkUser(){
-  //     const loggedInUser = localStorage.getItem('id')
-  //     if(loggedInUser){
-  //       setUser(loggedInUser)
-  //     }
-  //   }
-  //  checkUser()
-  // },[])
-  // console.log(user)
 
 
   return (
     <Router>
       <Navbar user={user} />
-      {/* <Starter /> */}
       <Routes>
         <Route path="/" element={<Starter />} />
         <Route path="/home" element={user ? <Home /> : <Navigate to='/login' />} />

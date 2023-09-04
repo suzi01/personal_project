@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Slide from './Slide'
-// import Slider from "react-slick";
 
 import { getTrending} from '../../services/profileService'
 

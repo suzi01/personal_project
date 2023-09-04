@@ -16,19 +16,12 @@ function FeatureSlide() {
         async function getAllTopRated() {
           if (!topItem) {
                 const response = await getTopRated();
-                // console.log(response)
                 setTopItem(response);
         }
       }
 
         getAllTopRated();
     }, [topItem]);
-
-
-
-  
-
-
 
   return (
     <Features features={topItem} />)
@@ -66,7 +59,6 @@ const Carousel = styled(Slider)`
 `
 
 const Container = styled.div`
-  ${'' /* top:20px; */}
   height: 90vh;
   position: relative;
   border:solid 10px #212F3C;
@@ -74,8 +66,6 @@ const Container = styled.div`
   display:block;
   position:relative;
   overflow:auto;
-  /* border-radius:10px; */
-  ${'' /* background-color: black; */}
 `;
 
 const Image = styled.div`
@@ -87,15 +77,8 @@ const Image = styled.div`
     url("https://image.tmdb.org/t/p/original/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg");
   width: 100%;
   height: 100%;
-  ${'' /* background-position: center; */}
   background-repeat: no-repeat;
 
-  /* border-radius:10px; */
-  
-
- 
-
-  ${'' /* margin-top:10px;   */}
   
   @media (max-width: 768px) {
     width: 100%;
@@ -157,8 +140,6 @@ const Wrap = styled.div`
   width: 90%;
   height: 50px;
   display: flex;
-  ${'' /* background-color:red; */}
-  ${'' /* justify-content: space-between; */}
     button{
         width: 70%;
         height:90%;

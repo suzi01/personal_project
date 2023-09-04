@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { getUser } from '../services/profileService'
-// timeago js
 
 const ChatSection = ({ message, own, chat, user }) => {
   const [other, setOther] = useState(null)
@@ -13,7 +12,6 @@ const ChatSection = ({ message, own, chat, user }) => {
       try{
         const res = await getUser(otherId)
         setOther(res)
-        // console.log(res.data)
       }catch(err){
         console.log(err)
       }

@@ -1,36 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link, Navigate } from "react-router-dom";
-// import {getUser} from "../services/profileService"
 import { AuthContext } from "../Context/AuthContext"
 import { logoutCall } from "../apiCalls";
 import { AiFillHome } from "react-icons/ai";
 import { MdRateReview, MdHowToVote, MdLocalMovies } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
 import { RiMovieFill } from "react-icons/ri";
-// MdRateReview
-// AiFillHome
 
 function Navbar(props) {
 
   const [userDetails, setUserDetails] = useState()
-  // const { user } = props
   const { user, dispatch } = useContext(AuthContext)
 
-
-  // useEffect(() =>{
-  //   console.log(user)
-  //   async function getLoggedUser() {
-  //     const response = await getUser(user);
-  //     console.log(response)
-  //     // setUserDetails(response);
-  // }
-
-  // getLoggedUser();
-  // },[user])
-
-
-  // console.log(user)
 
   const handleClick = () => {
     logoutCall(dispatch)
@@ -54,12 +36,10 @@ function Navbar(props) {
             <LinkStyle to="/watchlist" > <MdLocalMovies />  Watchlist </LinkStyle>
             <LinkStyle to="/addedlikes" ><RiMovieFill />  Added Likes </LinkStyle>
           </MenuItems>
-          {/* <Link to="/profile"> */}
           <Profile>
             <img src={user.profile.thumbnail} alt={user.name.userName} />
             <span>{user.name.userName}</span>
           </Profile>
-          {/* </Link> */}
           <Link to="/login">
             <SignIn onClick={handleClick}>Log Out</SignIn>
           </Link>
@@ -83,14 +63,11 @@ const Nav = styled.nav`
   height: 80px;
   padding: 0 18px;
   z-index: 1;
-  ${'' /* background-color: rgba(255,255,255,0.5); */}
-  
   background-color:black;
 `;
 
 const Logo = styled.div`
   width: 30px;
-  /* height: 40px; */
   padding-left: 20px;
   padding-right: 35px;
   img {
@@ -123,9 +100,7 @@ const WebName = styled.span`
   }
 `;
 const MenuItems = styled.div`
-  /* background-color: red; */
   display: flex;
-  /* flex-direction:row; */
   align-items: center;
   height: 100%;
   max-width: 80%;
@@ -228,8 +203,5 @@ const Profile = styled.div`
     margin-right:10px;
     object-fit:cover;
   }
-
-
-
 `
 export default Navbar

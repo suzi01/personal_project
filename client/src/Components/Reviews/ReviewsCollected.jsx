@@ -68,7 +68,6 @@ const Container = styled.div`
 const Content = styled.div`
   padding:10px;
   position:relative;
-  ${'' /* background-color:red; */}
   top:100px;
   margin-bottom:140px
  
@@ -98,7 +97,6 @@ const SearchBar = styled.div`
 
 const ReviewsSection = styled.div`
   width:100%;
-  ${'' /* background-color:pink; */}
   display:flex;
   flex-direction:row;
   margin-top:35px;
@@ -106,7 +104,6 @@ const ReviewsSection = styled.div`
 
 const ReviewsNav = styled.div`
   flex:1;
-  ${'' /* background-color:red; */}
   display:flex;
   flex-direction: column;
   gap:10px;
@@ -122,7 +119,6 @@ const ReviewsNav = styled.div`
 
 const ShowSelection = styled.div`
   flex:5;
-  ${'' /* background-color:green; */}
   display:flex;
   flex-direction:row;
   padding: 0 20px;
@@ -156,7 +152,6 @@ const Info = styled.div`
     border: 2px solid white;
     padding:20px;
     width:30px;
-    ${'' /* margin-top:5px; */}
     border-radius:50%;
     margin-right: 20px;
   }
@@ -175,33 +170,25 @@ const Rating = styled.div`
 
 const ReviewItems = styled.div`
   margin-top:15px;
-  ${'' /* flex-direction:column; */}
   color:black;
-  ${'' /* background-color:red */}
   text-align:left;
-  ${'' /* flex-wrap:wrap; */}
-  ${'' /* gap:10px; */}
   display: flex;
   flex-direction:column;
-  ${'' /* background-color:pink; */}
   padding: 20px 0;
 `
 
 const ReviewItem = styled.div`
 width:80%;
   display: flex;
-  ${'' /* flex-direction:row; */}
   padding:20px;
   color:white;
   font-weight:bold;
   font-size:15px;
   background: #566573 ;
-  ${'' /* width:30%; */}
   margin:auto;
   border:5px solid orange;
   border-radius: 20px;
   margin-bottom:20px;
-  ${'' /* max-height:400px; */}
   overflow-y: auto;
   
 `
@@ -209,7 +196,6 @@ width:80%;
 const CreatedDate = styled.div`
   display:flex;
   flex-direction:column;  
-  ${'' /* background-color:purple; */}
   font-size: 18px;
   line-height: 30px;
   padding: 0 15px;

@@ -18,16 +18,8 @@ return (
   );
 }
 const Container = styled.main`
-  ${'' /* position: relative; */}
-  ${'' /* background: linear-gradient(
-    112.1deg,
-    rgb(32, 38, 57) 11.4%,
-    rgb(63, 76, 119) 70.2%
-  ); */}
   background-color:black;
-  /* overflow-x: hidden; */
   overflow: hidden;
-  /* padding: 0 25px; */
   z-index:-1;
 `;
 export default Home;

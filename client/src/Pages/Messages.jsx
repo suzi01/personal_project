@@ -15,7 +15,6 @@ const Messages = ({ own }) => {
     const { user } = useContext(AuthContext)
     const scrollRef = useRef()
 
-    // console.log(user._id)
     useEffect(() => {
         const getAllConversations = async () => {
             try {
@@ -35,7 +34,6 @@ const Messages = ({ own }) => {
         const getAllMessages = async () => {
             try {
                 const res = await getMessages(currentChat._id)
-                // console.log(currentChat._id)
                 setMessages(res.data)
             } catch (err) {
                 console.log(err)
@@ -66,7 +64,6 @@ const Messages = ({ own }) => {
         }
     }
 
-    // console.log(messages)
 
     return (
         <Container>
@@ -141,7 +138,6 @@ const Convo = styled.div`
 
 const ChatResponse = styled.div`
   width:90%;
-  ${'' /* margin-left:20px; */}
   margin-top:20px;
   display:flex;
   justify-content:space-between;
@@ -162,17 +158,9 @@ const ChatResponse = styled.div`
 `
 
 const ChatBoxMessages = styled.div`
-  ${'' /* flex:3; */}
-  ${'' /* max-height: */}
   background-color:orange;
   width:75vw;
-  ${'' /* height:70vh; */}
-  ${'' /* margin-right:70px; */}
   padding:15px 25px;
-  ${'' /* display:flex;
-  flex-direction:column;
-  height:100vh;
-  overflow-y: scroll; */}
 `
 
 const Chat = styled.div`
@@ -180,7 +168,6 @@ const Chat = styled.div`
   flex-direction:column;
   height:75vh;
   overflow-y: scroll;
-  ${'' /* scroll-padding-right: 100px; */}
 `
 
 const MessageSection = styled.div`

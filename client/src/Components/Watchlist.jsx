@@ -170,18 +170,13 @@ const Films = styled.div`
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  /* grid-template-rows: repeat(8, 5vw); */
   grid-gap: 10px;
-  /* display: flex;
-  flex-wrap:wrap;
-  flex-direction:row; */
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
 const Film = styled.div`
   padding: 10px;
-  /* flex-basis: auto; */
   img {
     width: 100%;
     box-shadow: 11px 1px 13px 0px rgba(0, 0, 0, 0.75);

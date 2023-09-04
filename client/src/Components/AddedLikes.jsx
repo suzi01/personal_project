@@ -13,14 +13,11 @@ import { AuthContext } from "../Context/AuthContext";
 function AddedLikes(props) {
   const [movies, setMovies] = useState()
   const { user } = useContext(AuthContext)
-  // const {user} = props
-  // console.log(movies)
+
   
   useEffect(() =>{
-    // console.log(user)
     async function getLoggedUser() {
       const response = await getUser(user._id);
-      // console.log(response.addedMovies)
       setMovies(response.addedMovies);
   }
 
@@ -64,7 +61,6 @@ function AddedLikes(props) {
     </FilmCard>)
   }
 
-  // console.log(movies)
   return (
     <>
       <Container>
@@ -79,17 +75,11 @@ function AddedLikes(props) {
   );
 }
 const Content = styled.div`
-  /* background-color: red; */
-  // padding-top:80px;
+  padding-top:80px;
   display: flex;
   justify-content: center;
   margin:auto;
   padding-left:20px;
-  /* align-items:center; */
-  
-  ${'' /* @media (max-width: 768px) {
-    padding: 4px;
-  } */}
 `;
 
 
@@ -117,26 +107,13 @@ const Container = styled.div`
 `;
 const Films = styled.div`
   padding: 10px;
-  /* margin-top:10%; */
   display: flex;
   flex-wrap: wrap;
-  /* display: grid; */
-  /* grid-template-columns: repeat(5, 1fr); */
-  /* grid-template-rows: repeat(8, 5vw); */
   grid-gap: 15px;
-  /* display: flex;
-  flex-wrap:wrap;
-  flex-direction:row; */
-  ${'' /* @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  } */}
 `;
 const Film = styled.div`
   padding: 10% 10px 0;
-  margin-bottom: 0;
-  /* background-color:red; */
-  /* margin-top: 10%; */
-  /* flex-basis: auto; */
+  margin-bottom: 0;/
   position: relative;
   img {
     width: 100%;
@@ -145,13 +122,9 @@ const Film = styled.div`
     border-radius: 5px;
   }
   p {
-    /* margin-top: 10px; */
     color: white;
     position: relative;
     margin: 5px 0;
-    /* margin: -3rem 0 2rem 1rem; */
-    /* padding: 1rem; */
-    /* background: rgba(white, 0.8); */
   }
   
 `;
@@ -161,8 +134,7 @@ const FilmCard = styled(Card)`
   height: 415px;
   padding:10px 10px 15px 10px;
   image {
-    height:100%
-    /* margin-bottom:10px; */
+    height:100%;
     width: 100%;
   }
   div{
@@ -170,9 +142,6 @@ const FilmCard = styled(Card)`
     padding-top: 20px;
   }
   }
-  ${'' /* @media (max-width: 756px) {
-    width:300px; */}
-  ${'' /* } */}
 `;
 
 const CardButtons = styled.div`
