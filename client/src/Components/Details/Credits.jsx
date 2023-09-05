@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Missing_credit from "./Missing_credit";
-
-
-
 import { getMediaCredits } from "../../services/profileService";
+
 
 function Credits(props) {
     const [credits, setCredits] = useState();

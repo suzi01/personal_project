@@ -157,6 +157,7 @@ const Icons = styled.div`
   width: 40%;
   justify-content: space-around;
   padding: 5px 0;
+  onHover:white;
   @media (max-width: 768px) {
     width: 70%;
   }
