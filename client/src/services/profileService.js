@@ -6,8 +6,9 @@ const apiConfig = {
   baseUrl: 'https://api.themoviedb.org/3/',
   width500path: (imgPath) => `https://image.tmdb.org/t/p/w500`,
   img_path: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
-  apiKey: process.env.API_KEY
+  apiKey: process.env.REACT_APP_API_KEY
 }
+
 
 const getAllProfiles = async () => {
   const response = await axios.get(`/api/profile`);
