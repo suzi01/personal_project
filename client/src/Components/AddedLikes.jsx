@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import { getUser, removeFromList } from "../services/profileService"
 import { AuthContext } from "../Context/AuthContext";
 

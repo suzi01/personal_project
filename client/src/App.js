@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from './Components/Navbar'
-import Starter from './Components/Starter'
+import Navbar from './Components/Navbar/Navbar'
+import Starter from './Components/Starter/Starter'
 import Home from "./Pages/Home";
-import Watchlist from "./Components/Watchlist";
+import Watchlist from "./Components/Watchlist/Watchlist";
 import AddedLikes from "./Components/AddedLikes";
-import Vote from "./Components/Vote"
+import Vote from "./Components/Vote/Vote"
 import ReviewsPage from "./Pages/ReviewsPage";
 import Messages from "./Pages/Messages";
 import Details from "./Components/Details/Details";

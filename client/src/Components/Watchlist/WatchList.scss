@@ -1,0 +1,66 @@
+.outer-div {
+  position: absolute;
+  background: linear-gradient(
+                  112.1deg,
+                  rgb(32, 38, 57) 11.4%,
+                  rgb(63, 76, 119) 70.2%
+  );
+  margin: 0;
+  padding: 10px;
+
+  .filter-buttons{
+    display: flex;
+    padding: 60px 40px 0;
+    margin: 30px;
+    button {
+      width: 100px;
+      height: 40px;
+      margin-right: 25px;
+      border-radius: 20px;
+      border: 2px solid white;
+      background-color: transparent;
+      text-transform: uppercase;
+      font-size: 15px;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      padding-left: 20px;
+      margin: auto 0;
+      button {
+        width: 100%;
+        margin-right: 10px;
+        font-size: 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .films{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .film{
+      padding: 10px;
+      img {
+        width: 100%;
+        box-shadow: 11px 1px 13px 0 rgba(0, 0, 0, 0.75);
+        margin-bottom: 15px;
+        border-radius: 5px;
+      }
+      p {
+        margin-top: 10px;
+        color: white;
+      }
+
+      .film-title{
+        color: white;
+      }
+    }
+  }
+}
+
