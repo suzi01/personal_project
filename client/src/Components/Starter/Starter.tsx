@@ -53,8 +53,8 @@ function Starter() {
       </div>
       <footer className="bottom">
         <div className="companies">
-          <img src='/images/company_logos1.jpeg' />
-          <img src='/images/company_logos2.jpeg' />
+          <img src='/images/company_logos1.jpeg' alt="" />
+          <img src='/images/company_logos2.jpeg' alt="" />
         </div>
       </footer>
     </div>

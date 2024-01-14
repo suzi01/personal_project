@@ -8,6 +8,8 @@ import { MdRateReview, MdHowToVote, MdLocalMovies } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
 import { RiMovieFill } from "react-icons/ri";
 
+import "./navbarStyles.scss"
+
 function Navbar(props) {
 
   const [userDetails, setUserDetails] = useState()
