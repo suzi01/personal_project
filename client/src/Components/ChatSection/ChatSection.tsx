@@ -27,7 +27,6 @@ const ChatSection: React.FC<chatSectionProps> = ({ message, own, chat, user }) =
     getOtherUser()
   }, [chat])
 
-  console.log('heeerrrre')
 
   if (!other) return <div>Loading...</div>;
   return (

@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar/Navbar'
 import Starter from './Components/Starter/Starter'
 import Home from "./Pages/Home";
 import Watchlist from "./Components/Watchlist/Watchlist";
-import AddedLikes from "./Components/AddedLikes";
+import AddedLikes from "./Components/AddedLikes/AddedLikes";
 import Vote from "./Components/Vote/Vote"
 import ReviewsPage from "./Pages/ReviewsPage";
 import Messages from "./Pages/Messages";

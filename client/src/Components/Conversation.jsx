@@ -7,6 +7,7 @@ const Conversation = ({conversation, currentUser}) => {
 
   const [user, setUser] = useState(null)
   useEffect(() => {
+    console.log(conversation)
     const otherId = conversation.members.find(m => m !== currentUser._id)
 
     const getOtherUser = async () => {
