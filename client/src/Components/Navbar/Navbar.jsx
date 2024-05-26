@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link, Navigate } from "react-router-dom";
-import { AuthContext } from "../Context/AuthContext"
-import { logoutCall } from "../apiCalls";
+import { AuthContext } from "../../Context/AuthContext"
+import { logoutCall } from "../../apiCalls";
 import { AiFillHome } from "react-icons/ai";
 import { MdRateReview, MdHowToVote, MdLocalMovies } from "react-icons/md";
 import { TiMessages } from "react-icons/ti";
 import { RiMovieFill } from "react-icons/ri";
+
+import "./navbarStyles.scss"
 
 function Navbar(props) {
 
