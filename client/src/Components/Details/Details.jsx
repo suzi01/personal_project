@@ -3,7 +3,8 @@ import styled from "styled-components";
 import Slide from "../Home/Slide";
 import { useParams } from 'react-router-dom'
 import Credits from "./Credits";
-import Recommendations from "./Recommendations";
+// import Recommendations from "./Recommendations";
+import Recommendations from "../Details2/Recommendations/Recommendations";
 
 
 import { addMovieToList, getMediaDetails, getUser, removeFromList } from "../../services/profileService";
