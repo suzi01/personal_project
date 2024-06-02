@@ -12,6 +12,8 @@ import "./navbarStyles.scss"
 
 function Navbar(props) {
 
+  console.log(props)
+
   const [userDetails, setUserDetails] = useState()
   const { user, dispatch } = useContext(AuthContext)
 
@@ -21,37 +23,37 @@ function Navbar(props) {
   }
 
   return (
-    <Nav>
-      <Logo>
+    <nav className="navbar">
+      <div className="logo">
         <img src="https://png.pngtree.com/element_our/20190530/ourmid/pngtree-watch-movie-popcorn-illustration-image_1244707.jpg" alt='logo' />
-      </Logo>
-      <WebName>
+      </div>
+      <span className="web-name">
         Entertainment <br /> Central
-      </WebName>
+      </span>
       {user ? (
         <>
-          <MenuItems>
-            <LinkStyle to="/home" ><AiFillHome />  Home </LinkStyle>
-            <LinkStyle to="/reviews" > <MdRateReview />  Reviews</LinkStyle>
-            <LinkStyle to="/vote" > <MdHowToVote />  Vote </LinkStyle>
-            <LinkStyle to="/messages" ><TiMessages />  Messages</LinkStyle>
-            <LinkStyle to="/watchlist" > <MdLocalMovies />  Watchlist </LinkStyle>
-            <LinkStyle to="/addedlikes" ><RiMovieFill />  Added Likes </LinkStyle>
-          </MenuItems>
-          <Profile>
+          <div className="menu-items">
+            <Link className="link-style" to="/home" ><AiFillHome />  Home </Link>
+            <Link className="link-style" to="/reviews" > <MdRateReview />  Reviews</Link>
+            <Link className="link-style" to="/vote" > <MdHowToVote />  Vote </Link>
+            <Link className="link-style" to="/messages" ><TiMessages />  Messages</Link>
+            <Link className="link-style" to="/watchlist" > <MdLocalMovies />  Watchlist </Link>
+            <Link className="link-style" to="/addedlikes" ><RiMovieFill />  Added Likes </Link>
+          </div>
+          <div className="profile">
             <img src={user.profile.thumbnail} alt={user.name.userName} />
             <span>{user.name.userName}</span>
-          </Profile>
+          </div>
           <Link to="/login">
-            <SignIn onClick={handleClick}>Log Out</SignIn>
+            <button className="sign-in" onClick={handleClick}>Log Out</button>
           </Link>
         </>
       ) : (
         <Link to="/login">
-          <SignIn>Login</SignIn>
+          <button className="sign-in">Login</button>
         </Link>
       )}
-    </Nav>
+    </nav>
   );
 }
 const Nav = styled.nav`
@@ -187,7 +189,6 @@ const SignIn = styled.button`
     margin-right: 5px;
   }
 `;
-
 
 const Profile = styled.div`
   display:flex;

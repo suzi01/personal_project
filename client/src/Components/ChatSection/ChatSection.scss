@@ -1,9 +1,10 @@
-.outer-div{
+.message-details{
     display:flex;
     flex-direction:column;
-    @include align-self(flex-start);
+    align-self: flex-start;
     &.own {
-        @include align-self(flex-end);
+        align-self:flex-end;
+
     }
     .sent-messages{
         display: flex;
@@ -17,11 +18,11 @@
         p{
             padding:10px;
             border-radius:20px;
-            max-width:300px;
+            max-width:550px;
             color:white;
-            @include background-color(#154360);
+            background-color:#154360;
             &.own {
-                @include background-color(#0B5345);
+                background-color:#0B5345;
             }
         }
     }
@@ -30,3 +31,4 @@
         margin-top:5px;
     }
 }
+

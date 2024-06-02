@@ -13,6 +13,7 @@ const jsx_runtime_1 = require("react/jsx-runtime");
 const react_1 = require("react");
 // @ts-ignore
 const profileService_1 = require("../../services/profileService");
+require("./ChatSection.scss");
 const ChatSection = ({ message, own, chat, user }) => {
     const [other, setOther] = (0, react_1.useState)(null);
     (0, react_1.useEffect)(() => {
@@ -30,6 +31,6 @@ const ChatSection = ({ message, own, chat, user }) => {
     }, [chat]);
     if (!other)
         return (0, jsx_runtime_1.jsx)("div", { children: "Loading..." });
-    return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsxs)("div", { className: `outer-div ${own ? 'own' : ''}`, children: [(0, jsx_runtime_1.jsxs)("div", { className: `sent-messages ${own ? 'own' : ''}`, children: [(0, jsx_runtime_1.jsx)("img", { src: own ? user.profile.thumbnail : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fparrotprint.com%2Fblog%2Fportrait-photography-wonder-human-face-2%2F&psig=AOvVaw1_A5k9Eke47Zn5MouHMwvB&ust=1710178644665000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNDJ74ae6oQDFQAAAAAdAAAAABAE", alt: "" }), (0, jsx_runtime_1.jsx)("p", { children: message.text })] }), (0, jsx_runtime_1.jsx)("div", { className: 'message-time', children: (0, jsx_runtime_1.jsx)("p", { children: message.createdAt }) })] }) }));
+    return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsxs)("div", { className: `message-details ${own ? 'own' : ''}`, children: [(0, jsx_runtime_1.jsxs)("div", { className: `sent-messages ${own ? 'own' : ''}`, children: [(0, jsx_runtime_1.jsx)("img", { src: own ? user.profile.thumbnail : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fparrotprint.com%2Fblog%2Fportrait-photography-wonder-human-face-2%2F&psig=AOvVaw1_A5k9Eke47Zn5MouHMwvB&ust=1710178644665000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNDJ74ae6oQDFQAAAAAdAAAAABAE", alt: "" }), (0, jsx_runtime_1.jsx)("p", { children: message.text })] }), (0, jsx_runtime_1.jsx)("div", { className: 'message-time', children: (0, jsx_runtime_1.jsx)("p", { children: message.createdAt }) })] }) }));
 };
 exports.default = ChatSection;

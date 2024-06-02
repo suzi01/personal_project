@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 // @ts-ignore
 import { getUser } from '../../services/profileService'
 
+import "./ChatSection.scss"
+
 interface chatSectionProps{
   message:any;
   own:any;
@@ -31,7 +33,7 @@ const ChatSection: React.FC<chatSectionProps> = ({ message, own, chat, user }) =
   if (!other) return <div>Loading...</div>;
   return (
     <>
-      <div className={`outer-div ${own ? 'own' : ''}`}>
+      <div className={`message-details ${own ? 'own' : ''}`}>
         <div className={`sent-messages ${own ? 'own' : ''}`}>
           <img src={own ? user.profile.thumbnail : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fparrotprint.com%2Fblog%2Fportrait-photography-wonder-human-face-2%2F&psig=AOvVaw1_A5k9Eke47Zn5MouHMwvB&ust=1710178644665000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNDJ74ae6oQDFQAAAAAdAAAAABAE"} alt=""></img>
           <p>{message.text}</p>

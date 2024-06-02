@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import ChatSection from '../Components/ChatSection'
+// import ChatSection from '../Components/ChatSection'
+import ChatSection from '../Components/ChatSection/ChatSection'
 // import Conversation from '../Components/Conversation'
 import Conversation from '../Components/Conversation/Conversation'
 import { AuthContext } from '../Context/AuthContext'

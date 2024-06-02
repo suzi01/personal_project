@@ -33,35 +33,4 @@ const Conversation = ({ conversation, currentUser }) => {
         return (0, jsx_runtime_1.jsx)("div", { children: "Loading..." });
     return ((0, jsx_runtime_1.jsx)("div", { className: 'conversation', children: (0, jsx_runtime_1.jsxs)("div", { className: 'conversation-details', children: [(0, jsx_runtime_1.jsx)("img", { src: user.profile.thumbnail, alt: user.name.userName }), (0, jsx_runtime_1.jsx)("span", { children: user.name.userName })] }) }));
 };
-// const Container = styled.div`
-//   background-color:black;
-//   position:absolute;
-//   width:100vw;
-//   min-height:100vh;
-// `
-// const Content = styled.div`
-//   margin-top:100px;
-//   display:flex;
-//   flex-direction:row;
-//   height:100%;
-// `
-// const Conversations = styled.div`
-//   color:white;
-//   padding:20px 10px 10px 10px;
-// `
-// const ConverationDetails = styled.div`
-//   margin-bottom: 8px;
-//   padding:5px;
-//   img{
-//     width:80px;
-//     height:80px;
-//     border-radius:50%;
-//     object-fit:cover;
-//     margin-right: 10px;
-//     margin-left:10px;
-//   }
-//   span{
-//     font-size:20px;
-//   }
-// `
 exports.default = Conversation;
