@@ -17,4 +17,3 @@ const ReviewsCollected = (props) => {
     return ((0, jsx_runtime_1.jsx)("div", { className: 'review-items', children: data && data.map((review) => renderReview(review)) }));
 };
 exports.default = ReviewsCollected;
-//# sourceMappingURL=ReviewsCollected.js.map

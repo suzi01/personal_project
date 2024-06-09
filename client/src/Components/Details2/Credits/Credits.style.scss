@@ -1,0 +1,31 @@
+.cast-cards {
+    padding-top: 10px;
+    display: flex;
+    align-content: center;
+    @media (max-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.cast-card {
+    text-align: center;
+    img {
+        width: 70%;
+        border-radius: 8px;
+    }
+    p {
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        img {
+            padding-top: 5px;
+            width: 50%;
+        }
+        p {
+            padding-left: 10%;
+        }
+    }
+}

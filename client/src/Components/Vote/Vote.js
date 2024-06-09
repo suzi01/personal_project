@@ -6,4 +6,3 @@ const Vote = () => {
     return ((0, jsx_runtime_1.jsx)("div", { className: "outer-Container", children: "Vote" }));
 };
 exports.default = Vote;
-//# sourceMappingURL=Vote.js.map

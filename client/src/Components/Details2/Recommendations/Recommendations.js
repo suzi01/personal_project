@@ -50,4 +50,3 @@ function Recommendations(props) {
 //   }
 // `;
 exports.default = Recommendations;
-//# sourceMappingURL=Recommendations.js.map

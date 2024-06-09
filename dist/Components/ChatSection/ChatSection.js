@@ -34,4 +34,3 @@ const ChatSection = ({ message, own, chat, user }) => {
     return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsxs)("div", { className: `message-details ${own ? 'own' : ''}`, children: [(0, jsx_runtime_1.jsxs)("div", { className: `sent-messages ${own ? 'own' : ''}`, children: [(0, jsx_runtime_1.jsx)("img", { src: own ? user.profile.thumbnail : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fparrotprint.com%2Fblog%2Fportrait-photography-wonder-human-face-2%2F&psig=AOvVaw1_A5k9Eke47Zn5MouHMwvB&ust=1710178644665000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNDJ74ae6oQDFQAAAAAdAAAAABAE", alt: "" }), (0, jsx_runtime_1.jsx)("p", { children: message.text })] }), (0, jsx_runtime_1.jsx)("div", { className: 'message-time', children: (0, jsx_runtime_1.jsx)("p", { children: message.createdAt }) })] }) }));
 };
 exports.default = ChatSection;
-//# sourceMappingURL=ChatSection.js.map

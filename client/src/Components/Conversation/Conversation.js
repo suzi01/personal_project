@@ -34,4 +34,3 @@ const Conversation = ({ conversation, currentUser }) => {
     return ((0, jsx_runtime_1.jsx)("div", { className: 'conversation', children: (0, jsx_runtime_1.jsxs)("div", { className: 'conversation-details', children: [(0, jsx_runtime_1.jsx)("img", { src: user.profile.thumbnail, alt: user.name.userName }), (0, jsx_runtime_1.jsx)("span", { children: user.name.userName })] }) }));
 };
 exports.default = Conversation;
-//# sourceMappingURL=Conversation.js.map

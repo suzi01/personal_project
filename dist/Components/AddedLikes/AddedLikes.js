@@ -52,4 +52,3 @@ function AddedLikes(props) {
     return ((0, jsx_runtime_1.jsx)(jsx_runtime_1.Fragment, { children: (0, jsx_runtime_1.jsxs)("div", { className: "container-div", children: [(0, jsx_runtime_1.jsx)("h1", { children: "Your Like List" }), "\u2202", (0, jsx_runtime_1.jsx)("div", { className: "content-div", children: (0, jsx_runtime_1.jsx)("div", { className: "films", children: movies && movies.map((item) => renderCard(item)) }) })] }) }));
 }
 exports.default = AddedLikes;
-//# sourceMappingURL=AddedLikes.js.map
