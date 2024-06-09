@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react'
 import CardHeader from 'react-bootstrap/esm/CardHeader';
 import styled from 'styled-components'
 // import ReviewsCollected from '../Components/Reviews/ReviewsCollected';
-import ReviewsCollected from '../Components/Reviews2/ReviewsCollected/ReviewsCollected';
-import SelectionSection from '../Components/Reviews/SelectionSection';
+import ReviewsCollected from '../Components/Reviews2/ReviewsCollected/ReviewsCollected'
+import SelectionSection from '../Components/Reviews2/SelectionSection/SelectionSection'
+// import SelectionSection from '../Components/Reviews/SelectionSection';
 import { getReviewsFromAPI, searchForItem } from '../services/profileService';
 
 // for this to Worker, need to use multi search to get media type and id and then use the reviews route
