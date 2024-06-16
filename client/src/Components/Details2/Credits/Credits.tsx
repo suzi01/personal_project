@@ -10,7 +10,7 @@ interface Credit {
     character: string
 }
 
-function Credits(props: { media_id: any; media_type: string }) {
+function Credits(props: { media_id: any; media_type: string | undefined }) {
     const [credits, setCredits] = useState<Credit[]>([])
     const { media_id, media_type } = props
 
